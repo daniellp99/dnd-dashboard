@@ -123,3 +123,6 @@
     @apply bg-background text-foreground;
   }
 }
+.react-grid-item.react-grid-placeholder {
+  @apply bg-muted-foreground;
+}
