@@ -1,4 +1,4 @@
-import DashboardLayout from "@/components/DashboardLayout";
+import DynamicDashboardLayout from "@/components/DynamicDashboardLayout";
 import GridItem from "@/components/GridItem";
 
 import { DEFAULT_LAYOUTS } from "@/lib/constants";
@@ -8,7 +8,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col md:flex-row">
       <header>header</header>
 
-      <DashboardLayout
+      <DynamicDashboardLayout
         layouts={{
           lg: DEFAULT_LAYOUTS.fourColumns,
           md: DEFAULT_LAYOUTS.fourColumns,
@@ -44,7 +44,7 @@ export default function Home() {
         <GridItem key="card-10" handlePosition="topRight">
           10
         </GridItem>
-      </DashboardLayout>
+      </DynamicDashboardLayout>
       <footer className="h-9">footer</footer>
     </main>
   );
