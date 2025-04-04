@@ -1,42 +1,20 @@
-import DashboardLayout from "@/components/DashboardLayout";
+import DynamicDashboardLayout from "@/components/DynamicDashboardLayout";
 import GridItem from "@/components/GridItem";
-import ReactGridLayout from "react-grid-layout";
+
+import { DEFAULT_LAYOUTS } from "@/lib/constants";
 
 export default function Home() {
-  // TODO: read layouts from local storage or provide the follows as default
-  const layoutLG: ReactGridLayout.Layout[] = [
-    { i: "card-2", x: 0, y: 0, w: 4, h: 1 },
-    { i: "card-3", x: 0, y: 1, w: 3, h: 2.5 },
-    { i: "card-6", x: 3, y: 2.5, w: 1, h: 2.5 },
-    { i: "card-4", x: 0, y: 5, w: 3, h: 8 },
-    { i: "card-7", x: 3, y: 5, w: 1, h: 5 },
-    { i: "card-8", x: 3, y: 5, w: 1, h: 2 },
-    { i: "card-9", x: 3, y: 5, w: 1, h: 1 },
-    { i: "card-5", x: 0, y: 13, w: 3, h: 8 },
-    { i: "card-10", x: 3, y: 13, w: 1, h: 8 },
-  ];
-  const layoutSM: ReactGridLayout.Layout[] = [
-    { i: "card-2", x: 0, y: 0, w: 2, h: 1 },
-    { i: "card-3", x: 0, y: 1, w: 1, h: 1.5 },
-    { i: "card-6", x: 1, y: 2.5, w: 1, h: 1.5 },
-    { i: "card-4", x: 0, y: 4, w: 1, h: 6 },
-    { i: "card-7", x: 1, y: 4, w: 1, h: 3 },
-    { i: "card-8", x: 1, y: 4, w: 1, h: 2 },
-    { i: "card-9", x: 1, y: 4, w: 1, h: 1 },
-    { i: "card-5", x: 0, y: 10, w: 1, h: 6 },
-    { i: "card-10", x: 1, y: 10, w: 1, h: 6 },
-  ];
   return (
     <main className="flex min-h-screen flex-col md:flex-row">
       <header>header</header>
 
-      <DashboardLayout
+      <DynamicDashboardLayout
         layouts={{
-          lg: layoutLG,
-          md: layoutLG,
-          sm: layoutSM,
-          xs: layoutSM,
-          xxs: layoutSM,
+          lg: DEFAULT_LAYOUTS.fourColumns,
+          md: DEFAULT_LAYOUTS.fourColumns,
+          sm: DEFAULT_LAYOUTS.twoColumns,
+          xs: DEFAULT_LAYOUTS.twoColumns,
+          xxs: DEFAULT_LAYOUTS.twoColumns,
         }}
       >
         <GridItem key="card-2" handlePosition="topRight">
@@ -66,7 +44,7 @@ export default function Home() {
         <GridItem key="card-10" handlePosition="topRight">
           10
         </GridItem>
-      </DashboardLayout>
+      </DynamicDashboardLayout>
       <footer className="h-9">footer</footer>
     </main>
   );
