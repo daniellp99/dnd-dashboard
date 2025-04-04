@@ -30,6 +30,9 @@ export default function DashboardLayout({
       containerPadding={[0, 0]}
       margin={[0, 0]}
       rowHeight={36}
+      onLayoutChange={(_, layouts) => {
+        setStorageLayouts(layouts);
+      }}
     >
       {children}
     </ResponsiveGridLayout>
