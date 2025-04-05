@@ -1,3 +1,4 @@
+import DashboardNav from "@/components/DashboardNav";
 import DynamicDashboardLayout from "@/components/DynamicDashboardLayout";
 import GridItem from "@/components/GridItem";
 
@@ -6,8 +7,7 @@ import { DEFAULT_LAYOUTS } from "@/lib/constants";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col md:flex-row">
-      <header>header</header>
-
+      <DashboardNav />
       <DynamicDashboardLayout
         layouts={{
           lg: DEFAULT_LAYOUTS.fourColumns,
