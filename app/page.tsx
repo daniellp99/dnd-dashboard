@@ -1,6 +1,7 @@
 import DashboardNav from "@/components/DashboardNav";
 import DynamicDashboardLayout from "@/components/DynamicDashboardLayout";
 import GridItem from "@/components/GridItem";
+import StatusBar from "@/components/StatusBar";
 
 import { DEFAULT_LAYOUTS } from "@/lib/constants";
 
@@ -45,7 +46,7 @@ export default function Home() {
           10
         </GridItem>
       </DynamicDashboardLayout>
-      <footer className="h-9">footer</footer>
+      <StatusBar />
     </main>
   );
 }
