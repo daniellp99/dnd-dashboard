@@ -76,17 +76,31 @@ export default function DashboardNav() {
           <span className="md:hidden">Deposit</span>
           <LandmarkIcon size={40} className="hidden md:block" />
         </Button>
-        <Button className="p-1.5" variant="ghost" size="icon">
-          <BellIcon size={20} />
-        </Button>
-        <Button className="p-1.5" variant="ghost" size="icon">
-          <MessageSquareIcon size={20} />
-        </Button>
-        <div className="flex items-center">
-          <span className="mr-1 text-sm">0</span>
-          <ChevronDown size={20} className="text-muted-foreground" />
+        <div className="bg-secondary flex flex-row items-center rounded-full md:flex-col">
+          <Button
+            className="rounded-full p-1.5"
+            variant="secondary"
+            size="icon"
+          >
+            <BellIcon size={20} />
+          </Button>
+          <Button
+            className="rounded-full p-1.5"
+            variant="secondary"
+            size="icon"
+          >
+            <MessageSquareIcon size={20} />
+          </Button>
+          <Button
+            className="gap-0.5 rounded-full p-1.5"
+            variant="secondary"
+            size="icon"
+          >
+            0
+            <ChevronDown size={20} className="text-muted-foreground" />
+          </Button>
         </div>
-        <Button className="p-1.5" variant="ghost" size="icon">
+        <Button className="rounded-full p-1.5" variant="secondary" size="icon">
           <UserIcon size={20} />
         </Button>
       </div>
