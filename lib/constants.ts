@@ -22,3 +22,10 @@ export const DEFAULT_LAYOUTS = {
     { i: "card-10", x: 1, y: 10, w: 1, h: 6, minH: 6, minW: 1 },
   ],
 };
+
+export enum MENU_BAR_POSITIONS {
+  top = "top",
+  bottom = "bottom",
+  left = "left",
+  right = "right",
+}
