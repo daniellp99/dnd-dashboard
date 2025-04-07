@@ -43,8 +43,8 @@ export default function StatusBar() {
         </div>
       </div>
       <div className="flex flex-row items-center md:flex-col">
-        <Button variant="ghost" size="sm">
-          <span className="text-sm">US</span>
+        <Button variant="ghost" size="icon">
+          US
           <ChevronDownIcon className="size-2" />
         </Button>
         <Button variant="ghost" size="sm" className="text-xs">
