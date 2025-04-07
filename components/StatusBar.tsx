@@ -26,19 +26,49 @@ export default function StatusBar() {
       className={cn(
         "flex items-center justify-between gap-2",
         statusbar === MENU_BAR_POSITIONS.top &&
+          navbar === MENU_BAR_POSITIONS.left &&
+          "col-start-2 col-end-6 row-start-1 row-end-2 flex-row divide-x-2 px-2",
+        statusbar === MENU_BAR_POSITIONS.top &&
+          navbar === MENU_BAR_POSITIONS.right &&
+          "col-start-1 col-end-5 row-start-1 row-end-2 flex-row divide-x-2 px-2",
+        statusbar === MENU_BAR_POSITIONS.top &&
+          navbar === MENU_BAR_POSITIONS.top &&
           "col-start-1 col-end-6 row-start-2 row-end-3 flex-row divide-x-2 px-2",
         statusbar === MENU_BAR_POSITIONS.top &&
-          navbar !== MENU_BAR_POSITIONS.top &&
+          navbar === MENU_BAR_POSITIONS.bottom &&
           "col-start-1 col-end-6 row-start-1 row-end-2 flex-row divide-x-2 px-2",
+
         statusbar === MENU_BAR_POSITIONS.bottom &&
+          navbar === MENU_BAR_POSITIONS.left &&
+          "col-start-2 col-end-6 row-start-5 row-end-6 flex-row divide-x-2 px-2",
+        statusbar === MENU_BAR_POSITIONS.bottom &&
+          navbar === MENU_BAR_POSITIONS.right &&
+          "col-start-1 col-end-5 row-start-5 row-end-6 flex-row divide-x-2 px-2",
+        ((statusbar === MENU_BAR_POSITIONS.bottom &&
+          navbar === MENU_BAR_POSITIONS.top) ||
+          (statusbar === MENU_BAR_POSITIONS.bottom &&
+            navbar === MENU_BAR_POSITIONS.bottom)) &&
           "col-start-1 col-end-6 row-start-5 row-end-6 flex-row divide-x-2 px-2",
+
         statusbar === MENU_BAR_POSITIONS.left &&
+          navbar === MENU_BAR_POSITIONS.top &&
+          "col-start-1 col-end-2 row-start-2 row-end-6 flex-col divide-x-0 divide-y-2 px-0 py-2",
+        statusbar === MENU_BAR_POSITIONS.left &&
+          navbar === MENU_BAR_POSITIONS.bottom &&
+          "col-start-1 col-end-2 row-start-1 row-end-5 flex-col divide-x-0 divide-y-2 px-0 py-2",
+        statusbar === MENU_BAR_POSITIONS.left &&
+          navbar === MENU_BAR_POSITIONS.left &&
           "col-start-2 col-end-3 row-start-1 row-end-6 flex-col divide-x-0 divide-y-2 px-0 py-2",
         statusbar === MENU_BAR_POSITIONS.left &&
-          navbar !== MENU_BAR_POSITIONS.left &&
+          navbar === MENU_BAR_POSITIONS.right &&
           "col-start-1 col-end-2 row-start-1 row-end-6 flex-col divide-x-0 divide-y-2 px-0 py-2",
+
         statusbar === MENU_BAR_POSITIONS.right &&
-          "col-start-5 col-end-6 row-start-1 row-end-6 flex-col divide-x-0 divide-y-2 px-0 py-2",
+          navbar === MENU_BAR_POSITIONS.top &&
+          "col-start-5 col-end-6 row-start-2 row-end-6 flex-col divide-x-0 divide-y-2 px-0 py-2",
+        statusbar === MENU_BAR_POSITIONS.right &&
+          navbar === MENU_BAR_POSITIONS.bottom &&
+          "col-start-5 col-end-6 row-start-1 row-end-5 flex-col divide-x-0 divide-y-2 px-0 py-2",
       )}
     >
       <div
