@@ -8,6 +8,7 @@ import {
   ExternalLinkIcon,
   EyeIcon,
   FileTextIcon,
+  FilterIcon,
   GridIcon,
   LineChartIcon,
   Link2Icon,
@@ -16,8 +17,8 @@ import {
   SettingsIcon,
   Share2Icon,
   StarIcon,
-  SwitchCameraIcon,
   UserIcon,
+  ZapIcon,
 } from "lucide-react";
 
 import DashboardNav from "@/components/DashboardNav";
@@ -96,124 +97,123 @@ export default function Home() {
           </div>
         </GridItem>
         <GridItem key="card-4" handlePosition="topRight">
-          <div className="mr-7 flex flex-wrap items-center p-1 text-xs">
-            <Button variant="ghost" size="sm" className="px-2 text-xs">
-              1m
-            </Button>
-            <Button variant="ghost" size="sm" className="px-2 text-xs">
-              <LineChartIcon className="size-4" />
-            </Button>
-            <Button variant="ghost" size="sm" className="px-2 text-xs">
-              <span>Indicators</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="px-2 text-xs">
-              <GridIcon className="size-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="flex items-center px-2 text-xs"
-            >
-              <span>Display Options</span>
-              <ChevronDownIcon className="ml-1 size-3" />
-            </Button>
-            <Button variant="ghost" size="sm" className="px-2 text-xs">
-              <span>Hide All Bubbles</span>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="px-2 text-xs text-blue-400"
-            >
-              <span>USD/SOL</span>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="px-2 text-xs text-blue-400"
-            >
-              <span>MarketCap/Price</span>
-            </Button>
-            <div className="ml-auto flex items-center">
+          <div className="flex h-full flex-col">
+            <div className="mr-7 flex flex-wrap items-center p-1 text-xs">
               <Button variant="ghost" size="sm" className="px-2 text-xs">
-                <span>Axiom</span>
-                <ChevronsDownIcon className="ml-1 size-3" />
+                1m
               </Button>
-              <Button variant="ghost" size="icon" className="px-2 text-xs">
-                <SettingsIcon className="size-3" />
+              <Button variant="ghost" size="sm" className="px-2 text-xs">
+                <LineChartIcon className="size-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="px-2 text-xs">
-                <ExternalLinkIcon className="size-3" />
+              <Button variant="ghost" size="sm" className="px-2 text-xs">
+                <span>Indicators</span>
               </Button>
-              <Button variant="ghost" size="icon" className="px-2 text-xs">
-                <EyeIcon className="size-3" />
+              <Button variant="ghost" size="sm" className="px-2 text-xs">
+                <GridIcon className="size-4" />
               </Button>
-            </div>
-          </div>
-          <div className="relative h-full flex-1 overflow-hidden bg-gray-900">
-            <div className="absolute left-2 top-2 text-xs">
-              <div className="font-medium">
-                titcoin/USD on Raydium V4 · 1 · axiom.trade
+              <Button
+                variant="ghost"
+                size="sm"
+                className="flex items-center px-2 text-xs"
+              >
+                <span>Display Options</span>
+                <ChevronDownIcon className="ml-1 size-3" />
+              </Button>
+              <Button variant="ghost" size="sm" className="px-2 text-xs">
+                <span>Hide All Bubbles</span>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="px-2 text-xs text-blue-400"
+              >
+                <span>USD/SOL</span>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="px-2 text-xs text-blue-400"
+              >
+                <span>MarketCap/Price</span>
+              </Button>
+              <div className="ml-auto flex items-center">
+                <Button variant="ghost" size="sm" className="px-2 text-xs">
+                  <span>Axiom</span>
+                  <ChevronsDownIcon className="ml-1 size-3" />
+                </Button>
+                <Button variant="ghost" size="icon" className="px-2 text-xs">
+                  <SettingsIcon className="size-3" />
+                </Button>
+                <Button variant="ghost" size="icon" className="px-2 text-xs">
+                  <ExternalLinkIcon className="size-3" />
+                </Button>
+                <Button variant="ghost" size="icon" className="px-2 text-xs">
+                  <EyeIcon className="size-3" />
+                </Button>
               </div>
-              <div className="text-gray-400">Volume 1.304K</div>
             </div>
-
-            <div className="absolute right-2 top-2 text-xs">
-              <div>36M</div>
-              <div className="mt-4">34.8M</div>
-              <div className="mt-4">34M</div>
-              <div className="mt-4">33M</div>
-              <div className="mt-4">32M</div>
-              <div className="mt-4">31M</div>
-              <div className="mt-4 text-red-500">30.2M</div>
-            </div>
-
-            <div className="flex h-full items-center justify-center">
-              {/* Placeholder for the actual chart */}
-              <div className="text-gray-500">
-                <LineChartIcon className="mx-auto mb-4 h-24 w-24 opacity-20" />
-                <div className="text-center">
-                  Chart visualization would go here
+            <div className="relative flex-1 overflow-hidden bg-gray-900">
+              <div className="absolute left-2 top-2 text-xs">
+                <div className="font-medium">
+                  Bitcoin/USD on Raydium V4 · 1 · axiom.trade
+                </div>
+                <div className="text-gray-400">Volume 1.304K</div>
+              </div>
+              <div className="absolute right-2 top-2 text-xs">
+                <div>36M</div>
+                <div className="mt-4">34.8M</div>
+                <div className="mt-4">34M</div>
+                <div className="mt-4">33M</div>
+                <div className="mt-4">32M</div>
+                <div className="mt-4">31M</div>
+                <div className="mt-4 text-red-500">30.2M</div>
+              </div>
+              <div className="flex items-center justify-center">
+                {/* Placeholder for the actual chart */}
+                <div className="text-gray-500">
+                  <LineChartIcon className="mx-auto mb-4 h-24 w-24 opacity-20" />
+                  <div className="text-center">
+                    Chart visualization would go here
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="absolute bottom-0 left-0 right-0 flex justify-between border-t border-gray-800 p-1 text-xs">
-              <div className="flex space-x-2">
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  3m
-                </Button>
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  1m
-                </Button>
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  5d
-                </Button>
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  1d
-                </Button>
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  <ClockIcon className="size-4" />
-                </Button>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div>12:53:46 (UTC)</div>
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  %
-                </Button>
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  log
-                </Button>
-                <Button variant="ghost" size="sm" className="px-2 text-xs">
-                  auto
-                </Button>
+              <div className="absolute bottom-0 left-0 right-0 flex justify-between border-t border-gray-800 p-1 text-xs">
+                <div className="flex space-x-2">
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    3m
+                  </Button>
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    1m
+                  </Button>
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    5d
+                  </Button>
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    1d
+                  </Button>
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    <ClockIcon className="size-4" />
+                  </Button>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div>12:53:46 (UTC)</div>
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    %
+                  </Button>
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    log
+                  </Button>
+                  <Button variant="ghost" size="sm" className="px-2 text-xs">
+                    auto
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </GridItem>
         <GridItem key="card-5" handlePosition="topRight">
-          <div className="flex h-full flex-col">
-            <div className="flex h-9 items-center justify-between text-sm">
+          <div className="mr-7 flex h-full flex-col">
+            <div className="flex h-9 items-center justify-between gap-2 text-sm">
               <span>Trades</span>
               <span>Positions</span>
               <span>Orders</span>
@@ -221,154 +221,140 @@ export default function Home() {
               <span>Top Traders</span>
               <span>Dev Tokens</span>
 
-              <div className="ml-auto flex items-center space-x-2 pr-2">
+              <div className="max-w-2/5 ml-auto flex w-full items-center justify-evenly gap-1">
                 <Button
                   variant="ghost"
-                  size="icon"
+                  size="sm"
                   className="border-blue-800 bg-blue-900/30 text-xs text-blue-400"
                 >
-                  <span className="mr-1">⚡</span>
-                  <span>Instant Trade</span>
+                  <ZapIcon />
+                  Instant Trade
                 </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="border-gray-700 text-xs"
-                >
-                  <FileTextIcon className="mr-1 h-3 w-3" />
-                  <span>Trades Panel</span>
+                <Button variant="secondary" size="sm">
+                  <FileTextIcon />
+                  Trades Panel
                 </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="border-gray-700 text-xs"
-                >
-                  <span className="mr-1">🔍</span>
-                  <span>DEV</span>
+                <Button variant="secondary" size="sm">
+                  <FilterIcon />
+                  DEV
                 </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="border-gray-700 text-xs"
-                >
-                  <UserIcon className="mr-1 h-3 w-3" />
-                  <span>YOU</span>
+                <Button variant="secondary" size="sm">
+                  <UserIcon />
+                  YOU
                 </Button>
-                <Button variant="ghost" size="sm" className="p-1 text-xs">
-                  <MoreHorizontalIcon className="h-4 w-4" />
+                <Button variant="ghost" size="icon">
+                  <MoreHorizontalIcon />
                 </Button>
               </div>
             </div>
-            <div className="m-0 p-0">
-              <div className="overflow-x-auto">
-                <table className="w-full text-xs">
-                  <thead>
-                    <tr className="border-b border-gray-800">
-                      <th className="p-2 text-left font-normal text-gray-400">
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="border-b border-gray-800">
+                    <th className="p-2 text-left font-normal text-gray-400">
+                      <div className="flex items-center">
+                        <span>Age</span>
+                        <ChevronDownIcon className="ml-1 h-3 w-3" />
+                      </div>
+                    </th>
+                    <th className="p-2 text-left font-normal text-gray-400">
+                      Time
+                    </th>
+                    <th className="p-2 text-left font-normal text-gray-400">
+                      Type
+                    </th>
+                    <th className="p-2 text-left font-normal text-gray-400">
+                      <div className="flex items-center">
+                        <span>MC</span>
+                        <ChevronDownIcon className="ml-1 h-3 w-3" />
+                      </div>
+                    </th>
+                    <th className="p-2 text-left font-normal text-gray-400">
+                      Amount
+                    </th>
+                    <th className="p-2 text-left font-normal text-gray-400">
+                      <div className="flex items-center">
+                        <span>Total USD</span>
+                        <div className="ml-1 h-3 w-3 rounded-full border border-green-500"></div>
+                      </div>
+                    </th>
+                    <th className="p-2 text-left font-normal text-gray-400">
+                      Trader
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      age: "9s",
+                      price: "$30.2M",
+                      amount: "5.91K",
+                      total: "$176.0",
+                      trader: "F1G...UWK",
+                    },
+                    {
+                      age: "10s",
+                      price: "$30.2M",
+                      amount: "7.89K",
+                      total: "$238.4",
+                      trader: "Bg1...ey8",
+                    },
+                    {
+                      age: "20s",
+                      price: "$30.2M",
+                      amount: "7.89K",
+                      total: "$238.4",
+                      trader: "Bg1...ey8",
+                    },
+                    {
+                      age: "20s",
+                      price: "$30.2M",
+                      amount: "6.99",
+                      total: "$0.21",
+                      trader: "F3q...wLr",
+                    },
+                    {
+                      age: "22s",
+                      price: "$30.2M",
+                      amount: "39.48",
+                      total: "$1.19",
+                      trader: "yo1...FHA",
+                    },
+                  ].map((trade, i) => (
+                    <tr
+                      key={i}
+                      className="border-b border-gray-800 hover:bg-gray-900"
+                    >
+                      <td className="p-2">{trade.age}</td>
+                      <td className="p-2"></td>
+                      <td className="p-2 text-green-500">Buy</td>
+                      <td className="p-2">{trade.price}</td>
+                      <td className="p-2">{trade.amount}</td>
+                      <td className="p-2 text-green-500">{trade.total}</td>
+                      <td className="p-2">
                         <div className="flex items-center">
-                          <span>Age</span>
-                          <ChevronDownIcon className="ml-1 h-3 w-3" />
+                          <div className="mr-1 h-3 w-3 rounded-full bg-red-500"></div>
+                          <span>{trade.trader}</span>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="ml-1 p-0"
+                          >
+                            <EyeIcon className="h-3 w-3" />
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="ml-1 p-0"
+                          >
+                            <StarIcon className="h-3 w-3" />
+                          </Button>
                         </div>
-                      </th>
-                      <th className="p-2 text-left font-normal text-gray-400">
-                        Time
-                      </th>
-                      <th className="p-2 text-left font-normal text-gray-400">
-                        Type
-                      </th>
-                      <th className="p-2 text-left font-normal text-gray-400">
-                        <div className="flex items-center">
-                          <span>MC</span>
-                          <ChevronDownIcon className="ml-1 h-3 w-3" />
-                        </div>
-                      </th>
-                      <th className="p-2 text-left font-normal text-gray-400">
-                        Amount
-                      </th>
-                      <th className="p-2 text-left font-normal text-gray-400">
-                        <div className="flex items-center">
-                          <span>Total USD</span>
-                          <div className="ml-1 h-3 w-3 rounded-full border border-green-500"></div>
-                        </div>
-                      </th>
-                      <th className="p-2 text-left font-normal text-gray-400">
-                        Trader
-                      </th>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      {
-                        age: "9s",
-                        price: "$30.2M",
-                        amount: "5.91K",
-                        total: "$176.0",
-                        trader: "F1G...UWK",
-                      },
-                      {
-                        age: "10s",
-                        price: "$30.2M",
-                        amount: "7.89K",
-                        total: "$238.4",
-                        trader: "Bg1...ey8",
-                      },
-                      {
-                        age: "20s",
-                        price: "$30.2M",
-                        amount: "7.89K",
-                        total: "$238.4",
-                        trader: "Bg1...ey8",
-                      },
-                      {
-                        age: "20s",
-                        price: "$30.2M",
-                        amount: "6.99",
-                        total: "$0.21",
-                        trader: "F3q...wLr",
-                      },
-                      {
-                        age: "22s",
-                        price: "$30.2M",
-                        amount: "39.48",
-                        total: "$1.19",
-                        trader: "yo1...FHA",
-                      },
-                    ].map((trade, i) => (
-                      <tr
-                        key={i}
-                        className="border-b border-gray-800 hover:bg-gray-900"
-                      >
-                        <td className="p-2">{trade.age}</td>
-                        <td className="p-2"></td>
-                        <td className="p-2 text-green-500">Buy</td>
-                        <td className="p-2">{trade.price}</td>
-                        <td className="p-2">{trade.amount}</td>
-                        <td className="p-2 text-green-500">{trade.total}</td>
-                        <td className="p-2">
-                          <div className="flex items-center">
-                            <div className="mr-1 h-3 w-3 rounded-full bg-red-500"></div>
-                            <span>{trade.trader}</span>
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="ml-1 p-0"
-                            >
-                              <EyeIcon className="h-3 w-3" />
-                            </Button>
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="ml-1 p-0"
-                            >
-                              <StarIcon className="h-3 w-3" />
-                            </Button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </GridItem>
@@ -403,7 +389,7 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="flex flex-1 flex-col">
+            <div className="flex flex-col">
               <div className="flex h-10 items-end justify-between border-b-2">
                 <div className="rounded-none underline underline-offset-8">
                   Market
@@ -413,43 +399,6 @@ export default function Home() {
               </div>
 
               <div className="m-0 flex-1 overflow-auto p-4">
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="text-gray-400">AMOUNT</div>
-                  <div className="flex items-center">
-                    <span>0.0</span>
-                    <Button variant="ghost" size="sm" className="ml-1 p-0">
-                      <MoreHorizontalIcon className="size-4" />
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="mb-4 grid grid-cols-4 gap-2">
-                  <Button
-                    variant="outline"
-                    className="border-gray-700 py-1 text-xs"
-                  >
-                    0.01
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-gray-700 py-1 text-xs"
-                  >
-                    0.1
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-gray-700 py-1 text-xs"
-                  >
-                    1
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-gray-700 py-1 text-xs"
-                  >
-                    10
-                  </Button>
-                </div>
-
                 <div className="mb-4 space-y-3">
                   <div className="flex items-center justify-between text-xs">
                     <div className="flex items-center">
@@ -469,18 +418,16 @@ export default function Home() {
                       <span>Off</span>
                     </div>
                   </div>
-
-                  <div className="flex items-center">
-                    <SwitchCameraIcon id="advanced-trading" className="mr-2" />
-                    <label htmlFor="advanced-trading" className="text-xs">
-                      Advanced Trading Strategy
-                    </label>
-                  </div>
                 </div>
 
-                <Button className="w-full rounded-full bg-green-500 py-6 text-white hover:bg-green-600">
-                  Buy titcoin
-                </Button>
+                <div className="mx-auto flex w-full justify-center">
+                  <Button
+                    size="sm"
+                    className="max-w-2xs w-full rounded-full bg-green-500 text-white hover:bg-green-600"
+                  >
+                    Buy Bitcoin
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
