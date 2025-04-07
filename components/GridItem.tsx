@@ -23,7 +23,7 @@ export default function GridItem({
   handlePosition,
 }: { children: React.ReactNode } & VariantProps<typeof gridItemVariants>) {
   return (
-    <Card variant="item" className="relative size-full">
+    <Card variant="item" className="relative">
       <Button
         size="icon"
         variant="ghost"

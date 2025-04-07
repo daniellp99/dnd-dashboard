@@ -1,3 +1,4 @@
+"use client";
 import {
   ActivityIcon,
   BellIcon,
@@ -23,6 +24,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+import { MENU_BAR_POSITIONS } from "@/lib/constants";
+import { searchParamsParsers } from "@/lib/searchParams";
+import { cn } from "@/lib/utils";
+import { useQueryStates } from "nuqs";
+import MenuOrientationSelect from "./MenuOrientationSelect";
+
 const navLinks = [
   { name: "Discover", href: "#", icon: GlobeIcon },
   { name: "Pulse", href: "#", icon: ActivityIcon },
@@ -34,9 +41,51 @@ const navLinks = [
 ];
 
 export default function DashboardNav() {
+  const [{ navbar, statusbar }, setPositions] =
+    useQueryStates(searchParamsParsers);
   return (
-    <header className="flex h-16 w-full flex-row items-center justify-between px-2 md:h-screen md:w-10 md:flex-col md:px-0 md:py-2">
-      <div className="flex flex-row items-center gap-4 md:flex-col">
+    <header
+      className={cn(
+        "flex items-center justify-between",
+        navbar === MENU_BAR_POSITIONS.top &&
+          "col-start-1 col-end-6 row-start-1 row-end-2 flex-row px-2",
+        navbar === MENU_BAR_POSITIONS.bottom &&
+          "col-start-1 col-end-6 row-start-4 row-end-5 flex-row px-2",
+        navbar === MENU_BAR_POSITIONS.bottom &&
+          statusbar !== MENU_BAR_POSITIONS.bottom &&
+          "col-start-1 col-end-6 row-start-5 row-end-6 flex-row px-2",
+        navbar === MENU_BAR_POSITIONS.left &&
+          "col-start-1 col-end-2 row-start-1 row-end-6 flex-col px-0 py-2",
+        navbar === MENU_BAR_POSITIONS.right &&
+          "col-start-4 col-end-5 row-start-1 row-end-6 flex-col px-0 py-2",
+        navbar === MENU_BAR_POSITIONS.right &&
+          statusbar !== MENU_BAR_POSITIONS.right &&
+          "col-start-5 col-end-6 row-start-1 row-end-6 flex-col px-0 py-2",
+        navbar === MENU_BAR_POSITIONS.left &&
+          statusbar === MENU_BAR_POSITIONS.top &&
+          "col-start-1 col-end-2 row-start-2 row-end-6 flex-col px-0 py-2",
+        navbar === MENU_BAR_POSITIONS.left &&
+          statusbar === MENU_BAR_POSITIONS.bottom &&
+          "col-start-1 col-end-2 row-start-2 row-end-5 flex-col px-0 py-2",
+        navbar === MENU_BAR_POSITIONS.right &&
+          statusbar === MENU_BAR_POSITIONS.top &&
+          "col-start-5 col-end-6 row-start-2 row-end-6 flex-col px-0 py-2",
+        navbar === MENU_BAR_POSITIONS.right &&
+          statusbar === MENU_BAR_POSITIONS.bottom &&
+          "col-start-5 col-end-6 row-start-2 row-end-5 flex-col px-0 py-2",
+      )}
+    >
+      <div
+        className={cn(
+          "flex items-center gap-4",
+          (navbar === MENU_BAR_POSITIONS.top ||
+            navbar === MENU_BAR_POSITIONS.bottom) &&
+            "flex-row",
+          (navbar === MENU_BAR_POSITIONS.left ||
+            navbar === MENU_BAR_POSITIONS.right) &&
+            "flex-col",
+        )}
+      >
         <div className="mx-auto flex items-center gap-2">
           <TriangleIcon size={32} />
           <span className="text-xl font-bold md:hidden">
@@ -46,7 +95,17 @@ export default function DashboardNav() {
             </span>
           </span>
         </div>
-        <nav className="hidden items-center gap-2 md:flex md:flex-col">
+        <nav
+          className={cn(
+            "hidden items-center gap-2 md:flex",
+            (navbar === MENU_BAR_POSITIONS.top ||
+              navbar === MENU_BAR_POSITIONS.bottom) &&
+              "flex-row",
+            (navbar === MENU_BAR_POSITIONS.left ||
+              navbar === MENU_BAR_POSITIONS.right) &&
+              "flex-col",
+          )}
+        >
           {navLinks.map((link) => (
             <TooltipProvider key={link.name}>
               <Tooltip>
@@ -63,8 +122,25 @@ export default function DashboardNav() {
           ))}
         </nav>
       </div>
-      <div className="flex flex-row items-center gap-2 md:flex-col">
-        <div className="relative md:hidden">
+      <div
+        className={cn(
+          "flex items-center gap-2",
+          (navbar === MENU_BAR_POSITIONS.top ||
+            navbar === MENU_BAR_POSITIONS.bottom) &&
+            "flex-row",
+          (navbar === MENU_BAR_POSITIONS.left ||
+            navbar === MENU_BAR_POSITIONS.right) &&
+            "flex-col",
+        )}
+      >
+        <div
+          className={cn(
+            "relative",
+            (navbar === MENU_BAR_POSITIONS.left ||
+              navbar === MENU_BAR_POSITIONS.right) &&
+              "hidden",
+          )}
+        >
           <SearchIcon className="text-muted-foreground absolute left-2 top-1/2 size-4 -translate-y-1/2" />
           <input
             type="text"
@@ -72,11 +148,44 @@ export default function DashboardNav() {
             className="w-52 rounded-md bg-[#1a1f27] py-1.5 pl-8 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-gray-600"
           />
         </div>
-        <Button className="text-foreground rounded-full bg-blue-600 hover:bg-blue-700 md:order-last md:p-2 md:has-[>svg]:px-2.5">
-          <span className="md:hidden">Deposit</span>
-          <LandmarkIcon size={40} className="hidden md:block" />
+        <Button
+          className={cn(
+            "text-foreground rounded-full bg-blue-600 hover:bg-blue-700",
+            (navbar === MENU_BAR_POSITIONS.left ||
+              navbar === MENU_BAR_POSITIONS.right) &&
+              "order-last p-2 has-[>svg]:px-2.5",
+          )}
+        >
+          <span
+            className={cn(
+              (navbar === MENU_BAR_POSITIONS.left ||
+                navbar === MENU_BAR_POSITIONS.right) &&
+                "hidden",
+            )}
+          >
+            Deposit
+          </span>
+          <LandmarkIcon
+            size={40}
+            className={cn(
+              "hidden",
+              (navbar === MENU_BAR_POSITIONS.left ||
+                navbar === MENU_BAR_POSITIONS.right) &&
+                "block",
+            )}
+          />
         </Button>
-        <div className="bg-secondary flex flex-row items-center rounded-full md:flex-col">
+        <div
+          className={cn(
+            "bg-secondary flex items-center rounded-full",
+            (navbar === MENU_BAR_POSITIONS.top ||
+              navbar === MENU_BAR_POSITIONS.bottom) &&
+              "flex-row",
+            (navbar === MENU_BAR_POSITIONS.left ||
+              navbar === MENU_BAR_POSITIONS.right) &&
+              "flex-col",
+          )}
+        >
           <Button
             className="rounded-full p-1.5"
             variant="secondary"
@@ -92,7 +201,7 @@ export default function DashboardNav() {
             <MessageSquareIcon size={20} />
           </Button>
           <Button
-            className="gap-0.5 rounded-full p-1.5"
+            className="rounded-full p-1.5"
             variant="secondary"
             size="icon"
           >
@@ -103,6 +212,13 @@ export default function DashboardNav() {
         <Button className="rounded-full p-1.5" variant="secondary" size="icon">
           <UserIcon size={20} />
         </Button>
+        <MenuOrientationSelect
+          defaultValue={navbar}
+          onValueChange={(value) =>
+            setPositions({ navbar: value as MENU_BAR_POSITIONS })
+          }
+          label="Navbar Position"
+        />
       </div>
     </header>
   );

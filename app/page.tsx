@@ -28,11 +28,19 @@ import StatusBar from "@/components/StatusBar";
 import { Button } from "@/components/ui/button";
 
 import { DEFAULT_LAYOUTS } from "@/lib/constants";
+import { searchParamsCache } from "@/lib/searchParams";
+import { SearchParams } from "nuqs";
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) {
+  await searchParamsCache.parse(searchParams);
   return (
-    <main className="flex min-h-screen flex-col md:flex-row">
+    <main className="grid min-h-screen w-full grid-cols-[40px_40px_1fr_40px_40px] grid-rows-[64px_64px_1fr_64px_64px] place-items-stretch">
       <DashboardNav />
+
       <DynamicDashboardLayout
         layouts={{
           lg: DEFAULT_LAYOUTS.fourColumns,
@@ -82,7 +90,6 @@ export default function Home() {
                 <div className="text-sm">1B</div>
               </div>
             </div>
-
             <div className="flex items-center px-3">
               <Button variant="ghost" size="sm" className="text-xs">
                 <MoreHorizontalIcon className="size-4" />
@@ -220,7 +227,6 @@ export default function Home() {
               <span>Holders (20194)</span>
               <span>Top Traders</span>
               <span>Dev Tokens</span>
-
               <div className="max-w-2/5 ml-auto flex w-full items-center justify-evenly gap-1">
                 <Button
                   variant="ghost"
@@ -388,7 +394,6 @@ export default function Home() {
                 Sell
               </Button>
             </div>
-
             <div className="flex flex-col">
               <div className="flex h-10 items-end justify-between border-b-2">
                 <div className="rounded-none underline underline-offset-8">
@@ -397,7 +402,6 @@ export default function Home() {
                 <div className="rounded-none">Limit</div>
                 <div className="rounded-none">Adv.</div>
               </div>
-
               <div className="m-0 flex-1 overflow-auto p-4">
                 <div className="mb-4 space-y-3">
                   <div className="flex items-center justify-between text-xs">
@@ -419,7 +423,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
                 <div className="mx-auto flex w-full justify-center">
                   <Button
                     size="sm"
@@ -486,7 +489,6 @@ export default function Home() {
               <span>Token Info</span>
               <ChevronDownIcon className="size-4" />
             </Button>
-
             <div className="mt-2 grid grow grid-cols-3 place-items-stretch gap-0 divide-x-2">
               <div className="border-b-2 text-center">
                 <div className="font-bold text-red-500">17.36%</div>
